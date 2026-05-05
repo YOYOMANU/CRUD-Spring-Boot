@@ -1,0 +1,63 @@
+.center {
+  display: grid;
+  place-items: center;
+}
+
+table,
+tr,
+tbody tr {
+  border-collapse: collapse;
+  border: 1px solid black;
+
+  th {
+    text-align: center;
+  }
+}
+
+td {
+  padding: 3rem;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+}
+
+.add {
+  margin-top: 25px;
+}
+
+.btn-edit,
+.btn-add {
+  background-color: blue;
+}
+
+.btn-delete {
+  border: none;
+  background-color: rgba(255, 0, 0, 0.799);
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+.alert {
+  text-align: center;
+  padding: 20px;
+  border-radius: 7px;
+  width: 50%;
+  margin-inline: auto;
+  margin-block: 20px;
+}
+
+.alert-success {
+  background: #2bd850d1;
+  color: white;
+}
+.alert-danger {
+  background: #fa2a46e2;
+  color: white;
+}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipes index</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
+  <body>
+    <div class="add">
+      <a th:href="@{/add}" class="btn btn-add">Ajouter</a>
+    </div>
+    <div th:if="${success}" class="alert alert-success">
+      <p th:text="${success}"></p>
+    </div>
+    <div class="center">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr th:each="recipe : ${recipes}">
+            <td th:text="${recipe.id}"></td>
+            <td th:text="${recipe.name}"></td>
+            <td>
+              <a th:href="@{/edit/{id}(id=${recipe.id})}" class="btn btn-edit"
+                >Modifier</a
+              >
+            </td>
+            <td>
+              <form th:action="@{/delete/{id}(id=${recipe.id})}" method="post">
+                <input type="hidden" name="_method" value="delete" />
+                <button type="submit" class="btn btn-delete">Supprimer</button>
+              </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script type="module">
+      document
+        .querySelector(".btn-delete")
+        .addEventListener("click", function (e) {
+          if (!confirm("Voulez-vous supprimer cette recette ?")) {
+            e.preventDefault();
+          }
+        });
+    </script>
+  </body>
+</html>
