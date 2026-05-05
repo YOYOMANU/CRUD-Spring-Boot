@@ -32,14 +32,14 @@ Un projet CRUD simple développé avec **Spring Boot** permettant de gérer des 
 ## 📁 Structure du projet
 
 src/
-├── controller/
-├── service/
-├── repository/
-├── model/
-├── templates/
-│ ├── index.html
-│ ├── add.html
-│ ├── edit.html
+  ├── controller/
+  ├── service/
+  ├── repository/
+  ├── model/
+  ├── templates/
+  │ ├── index.html
+  │ ├── add.html
+  │ ├── edit.html
 
 ---
 
